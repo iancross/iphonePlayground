@@ -21,7 +21,7 @@
 		45C5AF660837F1FFFECA45BB /* Pods_locationUpdater.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_locationUpdater.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D053F29BC85BE2CFC8112ED /* Pods-locationUpdater.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-locationUpdater.release.xcconfig"; path = "Pods/Target Support Files/Pods-locationUpdater/Pods-locationUpdater.release.xcconfig"; sourceTree = "<group>"; };
 		AF7149945859E2E78CAE802E /* Pods-locationUpdater.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-locationUpdater.debug.xcconfig"; path = "Pods/Target Support Files/Pods-locationUpdater/Pods-locationUpdater.debug.xcconfig"; sourceTree = "<group>"; };
-		C390E97E1D61075500AA02A9 /* locationUpdater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = locationUpdater.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3479D561D628C7B005AD7ED /* locationUpdater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = locationUpdater.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C390E9811D61075500AA02A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C390E9831D61075500AA02A9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C390E9861D61075500AA02A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -56,18 +56,10 @@
 			isa = PBXGroup;
 			children = (
 				C390E9801D61075500AA02A9 /* locationUpdater */,
-				C390E97F1D61075500AA02A9 /* Products */,
 				FA7713A732313F70A70DA5E9 /* Pods */,
 				7F3CEC86E0B4BE748D937E6A /* Frameworks */,
+				C3479D561D628C7B005AD7ED /* locationUpdater.app */,
 			);
-			sourceTree = "<group>";
-		};
-		C390E97F1D61075500AA02A9 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				C390E97E1D61075500AA02A9 /* locationUpdater.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		C390E9801D61075500AA02A9 /* locationUpdater */ = {
@@ -122,7 +114,7 @@
 			);
 			name = locationUpdater;
 			productName = locationUpdater;
-			productReference = C390E97E1D61075500AA02A9 /* locationUpdater.app */;
+			productReference = C3479D561D628C7B005AD7ED /* locationUpdater.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -150,7 +142,7 @@
 				Base,
 			);
 			mainGroup = C390E9751D61075500AA02A9;
-			productRefGroup = C390E97F1D61075500AA02A9 /* Products */;
+			productRefGroup = C390E9751D61075500AA02A9;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (

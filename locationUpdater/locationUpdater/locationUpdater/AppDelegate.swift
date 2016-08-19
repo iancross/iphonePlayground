@@ -24,7 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FIRApp.configure()
         GMSServices.provideAPIKey("AIzaSyBQbKGJXJMAo0iGFeAJ8K3sMGAYdPUAduE")
         GMSPlacesClient.provideAPIKey("AIzaSyBQbKGJXJMAo0iGFeAJ8K3sMGAYdPUAduE")
-        
         return true
     }
 
