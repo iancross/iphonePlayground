@@ -11,52 +11,46 @@ import Firebase
 import GoogleMaps
 import GooglePlaces
 
-class UpdateLocationController: UIViewController {
+class UpdateLocationController: UIViewController, CLLocationManagerDelegate {
     var rootRef: FIRDatabaseReference? = nil
     let locationManager = CLLocationManager()
     override func viewDidLoad() {
         super.viewDidLoad()
         rootRef = FIRDatabase.database().reference()
-        //locationManager.delegate = self
-        //locationManager.requestWhenInUseAuthorization()
         print("didLoad")
+        
+        
+        //self.locationManager.requestAlwaysAuthorization()
+        
+        // For use in foreground
+        self.locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            //locationManager.startUpdatingLocation()
+        }
+        rootRef?.child("location").observeEventType(.ChildChanged) { (snapshot) in
+            print (snapshot)
+        }
     }
     override func viewDidAppear(animated: Bool) {
         print("didAppear")
     }
     @IBAction func updateLocationTouchUpInside(sender: UIButton) {
-        rootRef!.child("location").child("longitude").setValue("fuckyea")
-    }
-}
-/*
-// MARK: - CLLocationManagerDelegate
-//1
-extension UpdateLocationController: CLLocationManagerDelegate {
-    // 2
-    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-        // 3
-        if status == .AuthorizedWhenInUse {
-            
-            // 4
-            locationManager.startUpdatingLocation()
-            
-            //5
-            //mapView.myLocationEnabled = true
-            //mapView.settings.myLocationButton = true
+        //let manager = CLLocationManager()
+        if let locValue : CLLocationCoordinate2D = locationManager.location?.coordinate {
+            print("locations = \(locValue.latitude) \(locValue.longitude)")
+            rootRef?.child("location").child("longitude").setValue(locValue.longitude)
+            rootRef?.child("location/latitude").setValue(locValue.latitude)
+        }
+        else {
+            print ("nothing")
         }
     }
-    
-    // 6
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.first {
-            
-            // 7
-            //mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
-            
-            // 8
-            locationManager.stopUpdatingLocation()
+    /*func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let locValue : CLLocationCoordinate2D = manager.location?.coordinate {
+            //print("locations = \(locValue.latitude) \(locValue.longitude)")
         }
-        
-    }
+    }*/
 }
-*/
