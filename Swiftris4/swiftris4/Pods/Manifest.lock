@@ -1,0 +1,12 @@
+PODS:
+  - BMCustomTableView (0.1.0)
+
+DEPENDENCIES:
+  - BMCustomTableView
+
+SPEC CHECKSUMS:
+  BMCustomTableView: 263be7eae28e521a1f76f235e1ddf124e8d98b81
+
+PODFILE CHECKSUM: 7697800f92ad3feec936399e7ea6739b85d6ceeb
+
+COCOAPODS: 1.4.0
